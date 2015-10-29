@@ -1,13 +1,10 @@
 var express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
-    mime = require('mime'),
-    type = mime.lookup(path);
+    path = require('path');
 
 
 app.use('/public', function (req, res) {
-    var charset = mime.charsets.lookup(type);
-    res.setHeader('Content-Type', type + (charset ? '; charset=' + charset : ''));
     res.sendfile(path.join(__dirname + '/public/index.html'));
 });
 
