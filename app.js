@@ -1,16 +1,18 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 3000;
+    port = process.env.PORT || 3000,
+    mime = require('mime'),
+    type = mime.lookup(path);
+
 
 app.use('/public', function (req, res) {
-    res.sendfile(__dirname + '/public/index.html');
+    var charset = mime.charsets.lookup(type);
+    res.setHeader('Content-Type', type + (charset ? '; charset=' + charset : ''));
+    res.sendfile(path.join(__dirname + '/public/index.html'));
 });
 
 app.use('/', function (req, res) {
-    var data = '<h1>hello world</h1>';
-
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end(data)
+    res.sendfile(path.join(__dirname + '/index.html'));
 });
 
 app.listen(port);
