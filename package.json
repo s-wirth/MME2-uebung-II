@@ -1,0 +1,22 @@
+{
+  "name": "MME2-uebung-II",
+  "version": "1.0.0",
+  "description": "second task for multi media engineering II, at the Beuth University of Technogly, Berlin, 5th term",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s-wirth/MME2-uebung-II.git"
+  },
+  "author": "Sophie Wirth, Lena Messmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s-wirth/MME2-uebung-II/issues"
+  },
+  "homepage": "https://github.com/s-wirth/MME2-uebung-II",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
