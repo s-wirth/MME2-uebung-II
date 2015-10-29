@@ -3,10 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 3000;
 
 app.use('/public', function (req, res) {
-    var data = '<h1>welcome to public</h1>';
-
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end(data)
+    res.sendfile(__dirname + '/public/index.html');
 });
 
 app.use('/', function (req, res) {
