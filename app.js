@@ -1,17 +1,9 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 3000,
-    path = require('path');
+    port = process.env.PORT || 3001;
 
-
-app.use('/public', function (req, res) {
-    res.sendfile(path.join(__dirname + '/public/index.html'));
-});
-
-app.use('/', function (req, res) {
-    res.sendfile(path.join(__dirname + '/index.html'));
-});
+app.use(express.static('public'));
 
 app.listen(port);
 
-console.log('server started at port %s ', port);
+console.log('Server started at http://localhost:%s/', port);
